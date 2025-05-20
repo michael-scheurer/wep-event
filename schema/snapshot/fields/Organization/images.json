@@ -1,0 +1,27 @@
+{
+  "collection": "Organization",
+  "field": "images",
+  "type": "alias",
+  "meta": {
+    "collection": "Organization",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "images",
+    "group": null,
+    "hidden": false,
+    "interface": "files",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "sort": 17,
+    "special": [
+      "files"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

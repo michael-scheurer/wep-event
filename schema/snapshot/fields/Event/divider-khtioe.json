@@ -1,0 +1,30 @@
+{
+  "collection": "Event",
+  "field": "divider-khtioe",
+  "type": "alias",
+  "meta": {
+    "collection": "Event",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "divider-khtioe",
+    "group": null,
+    "hidden": false,
+    "interface": "presentation-divider",
+    "note": null,
+    "options": {
+      "title": "Daten und Zeiten"
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 13,
+    "special": [
+      "alias",
+      "no-data"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "collection": "Event",
+  "field": "status",
+  "type": "string",
+  "meta": {
+    "collection": "Event",
+    "conditions": null,
+    "display": "labels",
+    "display_options": {
+      "choices": null,
+      "showAsDot": true
+    },
+    "field": "status",
+    "group": null,
+    "hidden": false,
+    "interface": "select-dropdown",
+    "note": null,
+    "options": {
+      "choices": [
+        {
+          "text": "Bestätigt",
+          "value": "confirmed"
+        },
+        {
+          "text": "Annuliert",
+          "value": "cancelled"
+        },
+        {
+          "text": "Verschoben",
+          "value": "postponed"
+        },
+        {
+          "text": "Ausverkauft",
+          "value": "soldOut"
+        }
+      ]
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 9,
+    "special": null,
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "half"
+  },
+  "schema": {
+    "name": "status",
+    "table": "Event",
+    "data_type": "character varying",
+    "default_value": "confirmed",
+    "max_length": 255,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

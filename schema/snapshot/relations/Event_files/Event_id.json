@@ -1,0 +1,25 @@
+{
+  "collection": "Event_files",
+  "field": "Event_id",
+  "related_collection": "Event",
+  "meta": {
+    "junction_field": "directus_files_id",
+    "many_collection": "Event_files",
+    "many_field": "Event_id",
+    "one_allowed_collections": null,
+    "one_collection": "Event",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": "images",
+    "sort_field": null
+  },
+  "schema": {
+    "table": "Event_files",
+    "column": "Event_id",
+    "foreign_key_table": "Event",
+    "foreign_key_column": "id",
+    "constraint_name": "event_files_event_id_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "SET NULL"
+  }
+}

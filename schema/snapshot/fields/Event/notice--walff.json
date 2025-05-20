@@ -1,0 +1,30 @@
+{
+  "collection": "Event",
+  "field": "notice--walff",
+  "type": "alias",
+  "meta": {
+    "collection": "Event",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "notice--walff",
+    "group": "repeat",
+    "hidden": false,
+    "interface": "presentation-notice",
+    "note": null,
+    "options": {
+      "text": "Meine Veranstaltung findet mehrere Male statt oder wird wöchentlich durchgeführt"
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 1,
+    "special": [
+      "alias",
+      "no-data"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

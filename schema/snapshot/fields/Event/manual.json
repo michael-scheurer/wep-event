@@ -1,0 +1,29 @@
+{
+  "collection": "Event",
+  "field": "manual",
+  "type": "alias",
+  "meta": {
+    "collection": "Event",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "manual",
+    "group": "accordion-pxnm5y",
+    "hidden": false,
+    "interface": "group-raw",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "sort": 2,
+    "special": [
+      "alias",
+      "no-data",
+      "group"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

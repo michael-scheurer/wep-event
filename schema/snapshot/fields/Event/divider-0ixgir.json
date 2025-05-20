@@ -1,0 +1,30 @@
+{
+  "collection": "Event",
+  "field": "divider-0ixgir",
+  "type": "alias",
+  "meta": {
+    "collection": "Event",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "divider-0ixgir",
+    "group": null,
+    "hidden": false,
+    "interface": "presentation-divider",
+    "note": null,
+    "options": {
+      "title": "Details und Bild(er)"
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 19,
+    "special": [
+      "alias",
+      "no-data"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

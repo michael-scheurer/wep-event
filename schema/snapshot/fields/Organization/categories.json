@@ -1,0 +1,29 @@
+{
+  "collection": "Organization",
+  "field": "categories",
+  "type": "alias",
+  "meta": {
+    "collection": "Organization",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "categories",
+    "group": null,
+    "hidden": false,
+    "interface": "list-m2m",
+    "note": null,
+    "options": {
+      "enableLink": true
+    },
+    "readonly": false,
+    "required": true,
+    "sort": 10,
+    "special": [
+      "m2m"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

@@ -263,6 +263,20 @@ type Subscription {
   directus_versions_mutated(event: EventEnum): directus_versions_mutated
   directus_comments_mutated(event: EventEnum): directus_comments_mutated
   directus_sync_id_map_mutated(event: EventEnum): directus_sync_id_map_mutated
+  Organization_Category_mutated(event: EventEnum): Organization_Category_mutated
+  Location_files_mutated(event: EventEnum): Location_files_mutated
+  Location_mutated(event: EventEnum): Location_mutated
+  Category_mutated(event: EventEnum): Category_mutated
+  Region_mutated(event: EventEnum): Region_mutated
+  Organization_mutated(event: EventEnum): Organization_mutated
+  Organization_files_mutated(event: EventEnum): Organization_files_mutated
+  Contact_mutated(event: EventEnum): Contact_mutated
+  Event_mutated(event: EventEnum): Event_mutated
+  Event_Location_mutated(event: EventEnum): Event_Location_mutated
+  Event_Category_mutated(event: EventEnum): Event_Category_mutated
+  Price_mutated(event: EventEnum): Price_mutated
+  Event_Price_mutated(event: EventEnum): Event_Price_mutated
+  Event_files_mutated(event: EventEnum): Event_files_mutated
 }
 
 """The `Boolean` scalar type represents `true` or `false`."""
@@ -331,6 +345,47 @@ type auth_tokens {
   access_token: String
   expires: GraphQLBigInt
   refresh_token: String
+}
+
+type Category {
+  id: ID!
+  status: String
+  sort: Int
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  name: String
+}
+
+type Category_mutated {
+  key: ID!
+  event: EventEnum
+  data: Category
+}
+
+type Contact {
+  id: ID!
+  status: String
+  sort: Int
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  email: String
+  eMailDescription: String
+  phone: String
+  phoneDescription: String
+}
+
+type Contact_mutated {
+  key: ID!
+  event: EventEnum
+  data: Contact
 }
 
 type count_functions {
@@ -1595,10 +1650,248 @@ type directus_webhooks_mutated {
   data: directus_webhooks
 }
 
+type Event {
+  id: ID!
+  status: String
+  sort: Int
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  name: String
+  location(filter: Location_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): Location
+  bkaMembership: Boolean
+  startDate: Date
+  startDate_func: datetime_functions
+  endDate: Date
+  endDate_func: datetime_functions
+  startDateRepeatWeekly: Date
+  startDateRepeatWeekly_func: datetime_functions
+  endDateRepeatWeekly: Date
+  endDateRepeatWeekly_func: datetime_functions
+  repeatWeeklyDays: JSON
+  repeatWeeklyDays_func: count_functions
+  specialTarif: String
+  ticketingUrl: String
+  description: String
+  descriptionPrint: String
+  targetAudience: String
+  laterPublicaton: Date
+  laterPublicaton_func: datetime_functions
+  publicationStatus: String
+  images(filter: Event_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Event_files]
+  images_func: count_functions
+  categories(filter: Event_Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Event_Category]
+  categories_func: count_functions
+  prices(filter: Price_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Price]
+  prices_func: count_functions
+}
+
+type Event_Category {
+  id: ID!
+  Event_id(filter: Event_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): Event
+  Category_id(filter: Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): Category
+}
+
+type Event_Category_mutated {
+  key: ID!
+  event: EventEnum
+  data: Event_Category
+}
+
+type Event_files {
+  id: ID!
+  Event_id(filter: Event_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): Event
+  directus_files_id(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
+}
+
+type Event_files_mutated {
+  key: ID!
+  event: EventEnum
+  data: Event_files
+}
+
+type Event_Location {
+  id: ID!
+  Event_id: ID
+  Location_id: ID
+}
+
+type Event_Location_mutated {
+  key: ID!
+  event: EventEnum
+  data: Event_Location
+}
+
+type Event_mutated {
+  key: ID!
+  event: EventEnum
+  data: Event
+}
+
+type Event_Price {
+  id: ID!
+  Event_id: ID
+  Price_id: ID
+}
+
+type Event_Price_mutated {
+  key: ID!
+  event: EventEnum
+  data: Event_Price
+}
+
+type Location {
+  id: ID!
+  status: String
+  sort: Int
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  name: String
+
+  """
+  Ein privater Ort ist nur für seinen Administrator sichtbar und verfügbar.
+  """
+  private: Boolean
+  address: String
+  zip: String
+  city: String
+  region(filter: Region_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): Region
+  description: String
+  dataSheet(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
+  websiteUrl: String
+  capacity: String
+  accessability: JSON
+  accessability_func: count_functions
+  images(filter: Location_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Location_files]
+  images_func: count_functions
+}
+
+type Location_files {
+  id: ID!
+  Location_id(filter: Location_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): Location
+  directus_files_id(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
+}
+
+type Location_files_mutated {
+  key: ID!
+  event: EventEnum
+  data: Location_files
+}
+
+type Location_mutated {
+  key: ID!
+  event: EventEnum
+  data: Location
+}
+
+type Organization {
+  id: ID!
+  status: String
+  sort: Int
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  name: String
+  subtitle: String
+  address: String
+  postOfficeBox: String
+  zip: String
+  city: String
+  region(filter: Region_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): Region
+  description: String
+  contacts(filter: Contact_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): Contact
+  websiteUrl: String
+  legalForm: String
+  reductions: String
+  categories(filter: Organization_Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Organization_Category]
+  categories_func: count_functions
+  images(filter: Organization_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Organization_files]
+  images_func: count_functions
+}
+
+type Organization_Category {
+  id: ID!
+  Organization_id(filter: Organization_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): Organization
+  Category_id(filter: Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): Category
+}
+
+type Organization_Category_mutated {
+  key: ID!
+  event: EventEnum
+  data: Organization_Category
+}
+
+type Organization_files {
+  id: ID!
+  Organization_id(filter: Organization_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): Organization
+  directus_files_id(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
+}
+
+type Organization_files_mutated {
+  key: ID!
+  event: EventEnum
+  data: Organization_files
+}
+
+type Organization_mutated {
+  key: ID!
+  event: EventEnum
+  data: Organization
+}
+
 type policy_me_globals_type {
   enforce_tfa: Boolean
   app_access: Boolean
   admin_access: Boolean
+}
+
+type Price {
+  id: ID!
+  sort: Int
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  tarif: Float
+  tarifDescription: String
+  event(filter: Event_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): Event
+}
+
+type Price_mutated {
+  key: ID!
+  event: EventEnum
+  data: Price
+}
+
+type Region {
+  id: ID!
+  status: String
+  sort: Int
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  name: String
+}
+
+type Region_mutated {
+  key: ID!
+  event: EventEnum
+  data: Region
 }
 
 type server_info {
@@ -1768,6 +2061,39 @@ input boolean_filter_operators {
   _neq: Boolean
   _null: Boolean
   _nnull: Boolean
+}
+
+input Category_filter {
+  id: id_filter_operators
+  status: string_filter_operators
+  sort: number_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  name: string_filter_operators
+  _and: [Category_filter]
+  _or: [Category_filter]
+}
+
+input Contact_filter {
+  id: id_filter_operators
+  status: string_filter_operators
+  sort: number_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  email: string_filter_operators
+  eMailDescription: string_filter_operators
+  phone: string_filter_operators
+  phoneDescription: string_filter_operators
+  _and: [Contact_filter]
+  _or: [Contact_filter]
 }
 
 input count_function_filter_operators {
@@ -2594,6 +2920,85 @@ input directus_webhooks_filter {
   _or: [directus_webhooks_filter]
 }
 
+input Event_Category_filter {
+  id: number_filter_operators
+  Event_id: Event_filter
+  Category_id: Category_filter
+  _and: [Event_Category_filter]
+  _or: [Event_Category_filter]
+}
+
+""""""
+input Event_Category_quantifier_filter {
+  id: number_filter_operators
+  Event_id: Event_filter
+  Category_id: Category_filter
+  _and: [Event_Category_filter]
+  _or: [Event_Category_filter]
+  _some: Event_Category_filter
+  _none: Event_Category_filter
+}
+
+input Event_files_filter {
+  id: number_filter_operators
+  Event_id: Event_filter
+  directus_files_id: directus_files_filter
+  _and: [Event_files_filter]
+  _or: [Event_files_filter]
+}
+
+""""""
+input Event_files_quantifier_filter {
+  id: number_filter_operators
+  Event_id: Event_filter
+  directus_files_id: directus_files_filter
+  _and: [Event_files_filter]
+  _or: [Event_files_filter]
+  _some: Event_files_filter
+  _none: Event_files_filter
+}
+
+input Event_filter {
+  id: id_filter_operators
+  status: string_filter_operators
+  sort: number_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  name: string_filter_operators
+  location: Location_filter
+  bkaMembership: boolean_filter_operators
+  startDate: date_filter_operators
+  startDate_func: datetime_function_filter_operators
+  endDate: date_filter_operators
+  endDate_func: datetime_function_filter_operators
+  startDateRepeatWeekly: date_filter_operators
+  startDateRepeatWeekly_func: datetime_function_filter_operators
+  endDateRepeatWeekly: date_filter_operators
+  endDateRepeatWeekly_func: datetime_function_filter_operators
+  repeatWeeklyDays: string_filter_operators
+  repeatWeeklyDays_func: count_function_filter_operators
+  specialTarif: string_filter_operators
+  ticketingUrl: string_filter_operators
+  description: string_filter_operators
+  descriptionPrint: string_filter_operators
+  targetAudience: string_filter_operators
+  laterPublicaton: date_filter_operators
+  laterPublicaton_func: datetime_function_filter_operators
+  publicationStatus: string_filter_operators
+  images: Event_files_quantifier_filter
+  images_func: count_function_filter_operators
+  categories: Event_Category_quantifier_filter
+  categories_func: count_function_filter_operators
+  prices: Price_quantifier_filter
+  prices_func: count_function_filter_operators
+  _and: [Event_filter]
+  _or: [Event_filter]
+}
+
 input hash_filter_operators {
   _null: Boolean
   _nnull: Boolean
@@ -2623,6 +3028,53 @@ input id_filter_operators {
   _nempty: Boolean
 }
 
+input Location_files_filter {
+  id: number_filter_operators
+  Location_id: Location_filter
+  directus_files_id: directus_files_filter
+  _and: [Location_files_filter]
+  _or: [Location_files_filter]
+}
+
+""""""
+input Location_files_quantifier_filter {
+  id: number_filter_operators
+  Location_id: Location_filter
+  directus_files_id: directus_files_filter
+  _and: [Location_files_filter]
+  _or: [Location_files_filter]
+  _some: Location_files_filter
+  _none: Location_files_filter
+}
+
+input Location_filter {
+  id: id_filter_operators
+  status: string_filter_operators
+  sort: number_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  name: string_filter_operators
+  private: boolean_filter_operators
+  address: string_filter_operators
+  zip: string_filter_operators
+  city: string_filter_operators
+  region: Region_filter
+  description: string_filter_operators
+  dataSheet: directus_files_filter
+  websiteUrl: string_filter_operators
+  capacity: string_filter_operators
+  accessability: string_filter_operators
+  accessability_func: count_function_filter_operators
+  images: Location_files_quantifier_filter
+  images_func: count_function_filter_operators
+  _and: [Location_filter]
+  _or: [Location_filter]
+}
+
 input number_filter_operators {
   _eq: GraphQLStringOrFloat
   _neq: GraphQLStringOrFloat
@@ -2636,6 +3088,124 @@ input number_filter_operators {
   _nnull: Boolean
   _between: [GraphQLStringOrFloat]
   _nbetween: [GraphQLStringOrFloat]
+}
+
+input Organization_Category_filter {
+  id: number_filter_operators
+  Organization_id: Organization_filter
+  Category_id: Category_filter
+  _and: [Organization_Category_filter]
+  _or: [Organization_Category_filter]
+}
+
+""""""
+input Organization_Category_quantifier_filter {
+  id: number_filter_operators
+  Organization_id: Organization_filter
+  Category_id: Category_filter
+  _and: [Organization_Category_filter]
+  _or: [Organization_Category_filter]
+  _some: Organization_Category_filter
+  _none: Organization_Category_filter
+}
+
+input Organization_files_filter {
+  id: number_filter_operators
+  Organization_id: Organization_filter
+  directus_files_id: directus_files_filter
+  _and: [Organization_files_filter]
+  _or: [Organization_files_filter]
+}
+
+""""""
+input Organization_files_quantifier_filter {
+  id: number_filter_operators
+  Organization_id: Organization_filter
+  directus_files_id: directus_files_filter
+  _and: [Organization_files_filter]
+  _or: [Organization_files_filter]
+  _some: Organization_files_filter
+  _none: Organization_files_filter
+}
+
+input Organization_filter {
+  id: id_filter_operators
+  status: string_filter_operators
+  sort: number_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  name: string_filter_operators
+  subtitle: string_filter_operators
+  address: string_filter_operators
+  postOfficeBox: string_filter_operators
+  zip: string_filter_operators
+  city: string_filter_operators
+  region: Region_filter
+  description: string_filter_operators
+  contacts: Contact_filter
+  websiteUrl: string_filter_operators
+  legalForm: string_filter_operators
+  reductions: string_filter_operators
+  categories: Organization_Category_quantifier_filter
+  categories_func: count_function_filter_operators
+  images: Organization_files_quantifier_filter
+  images_func: count_function_filter_operators
+  _and: [Organization_filter]
+  _or: [Organization_filter]
+}
+
+input Price_filter {
+  id: id_filter_operators
+  sort: number_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  tarif: number_filter_operators
+  tarifDescription: string_filter_operators
+  event: Event_filter
+  _and: [Price_filter]
+  _or: [Price_filter]
+}
+
+""""""
+input Price_quantifier_filter {
+  id: id_filter_operators
+  sort: number_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  tarif: number_filter_operators
+  tarifDescription: string_filter_operators
+  event: Event_filter
+  _and: [Price_filter]
+  _or: [Price_filter]
+  _some: Price_filter
+  _none: Price_filter
+}
+
+input Region_filter {
+  id: id_filter_operators
+  status: string_filter_operators
+  sort: number_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  name: string_filter_operators
+  _and: [Region_filter]
+  _or: [Region_filter]
 }
 
 input string_filter_operators {

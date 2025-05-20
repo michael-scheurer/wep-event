@@ -1,0 +1,31 @@
+{
+  "collection": "Event",
+  "field": "accordion-pxnm5y",
+  "type": "alias",
+  "meta": {
+    "collection": "Event",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "accordion-pxnm5y",
+    "group": "repeat",
+    "hidden": false,
+    "interface": "group-accordion",
+    "note": null,
+    "options": {
+      "start": "first"
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 2,
+    "special": [
+      "alias",
+      "no-data",
+      "group"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

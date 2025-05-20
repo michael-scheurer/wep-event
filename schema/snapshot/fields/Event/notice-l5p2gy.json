@@ -1,0 +1,30 @@
+{
+  "collection": "Event",
+  "field": "notice-l5p2gy",
+  "type": "alias",
+  "meta": {
+    "collection": "Event",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "notice-l5p2gy",
+    "group": null,
+    "hidden": false,
+    "interface": "presentation-notice",
+    "note": null,
+    "options": {
+      "text": "Mithilfe dieses Formulars können Sie den Inhalt der Seite Ihrer Veranstaltung erstellen. Es ist obligatorisch, Ihre Veranstaltung mit einem Ort zu verknüpfen. Wenn Sie nicht für diesen Ort verantwortlich sind, wird Ihre Veranstaltung der zuständigen Stelle zur Validierung vorgelegt. Diese muss sie bestätigen oder ändern, damit sie veröffentlicht werden kann."
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 7,
+    "special": [
+      "alias",
+      "no-data"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

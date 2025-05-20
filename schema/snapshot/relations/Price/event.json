@@ -1,0 +1,25 @@
+{
+  "collection": "Price",
+  "field": "event",
+  "related_collection": "Event",
+  "meta": {
+    "junction_field": "Price_id",
+    "many_collection": "Price",
+    "many_field": "event",
+    "one_allowed_collections": null,
+    "one_collection": "Event",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": "prices",
+    "sort_field": null
+  },
+  "schema": {
+    "table": "Price",
+    "column": "event",
+    "foreign_key_table": "Event",
+    "foreign_key_column": "id",
+    "constraint_name": "price_event_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "SET NULL"
+  }
+}

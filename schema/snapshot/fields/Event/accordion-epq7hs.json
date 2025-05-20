@@ -1,0 +1,36 @@
+{
+  "collection": "Event",
+  "field": "accordion-epq7hs",
+  "type": "alias",
+  "meta": {
+    "collection": "Event",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "accordion-epq7hs",
+    "group": null,
+    "hidden": false,
+    "interface": "group-accordion",
+    "note": null,
+    "options": {
+      "start": "first"
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 14,
+    "special": [
+      "alias",
+      "no-data",
+      "group"
+    ],
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Durchgängig"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

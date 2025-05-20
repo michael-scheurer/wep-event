@@ -1,0 +1,29 @@
+{
+  "collection": "Event",
+  "field": "weekly",
+  "type": "alias",
+  "meta": {
+    "collection": "Event",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "weekly",
+    "group": "accordion-pxnm5y",
+    "hidden": false,
+    "interface": "group-raw",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "sort": 1,
+    "special": [
+      "alias",
+      "no-data",
+      "group"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

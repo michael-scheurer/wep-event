@@ -1,0 +1,25 @@
+{
+  "collection": "Organization_files",
+  "field": "Organization_id",
+  "related_collection": "Organization",
+  "meta": {
+    "junction_field": "directus_files_id",
+    "many_collection": "Organization_files",
+    "many_field": "Organization_id",
+    "one_allowed_collections": null,
+    "one_collection": "Organization",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": "images",
+    "sort_field": null
+  },
+  "schema": {
+    "table": "Organization_files",
+    "column": "Organization_id",
+    "foreign_key_table": "Organization",
+    "foreign_key_column": "id",
+    "constraint_name": "organization_files_organization_id_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "SET NULL"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "collection": "Event",
+  "field": "durchgaengig",
+  "type": "alias",
+  "meta": {
+    "collection": "Event",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "durchgaengig",
+    "group": "accordion-epq7hs",
+    "hidden": false,
+    "interface": "group-raw",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "sort": 1,
+    "special": [
+      "alias",
+      "no-data",
+      "group"
+    ],
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Durchgängig"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

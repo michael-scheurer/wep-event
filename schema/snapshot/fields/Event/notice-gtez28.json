@@ -1,0 +1,30 @@
+{
+  "collection": "Event",
+  "field": "notice-gtez28",
+  "type": "alias",
+  "meta": {
+    "collection": "Event",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "notice-gtez28",
+    "group": "durchgaengig",
+    "hidden": false,
+    "interface": "presentation-notice",
+    "note": null,
+    "options": {
+      "text": "Meine Veranstaltung findet durchgängig an einem einzigen oder mehreren aufeinanderfolgenden Tagen statt"
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 1,
+    "special": [
+      "alias",
+      "no-data"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}
