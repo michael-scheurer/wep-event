@@ -13,7 +13,8 @@
     "interface": "list-m2m",
     "note": null,
     "options": {
-      "enableLink": true
+      "enableLink": true,
+      "template": "{{Category_id.name}}"
     },
     "readonly": false,
     "required": true,

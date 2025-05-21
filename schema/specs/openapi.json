@@ -15823,20 +15823,6 @@
             "nullable": true,
             "type": "string"
           },
-          "categories": {
-            "nullable": true,
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "type": "integer"
-                },
-                {
-                  "$ref": "#/components/schemas/ItemsOrganizationCategory"
-                }
-              ]
-            }
-          },
           "images": {
             "nullable": true,
             "type": "array",
@@ -15847,6 +15833,20 @@
                 },
                 {
                   "$ref": "#/components/schemas/ItemsOrganizationFiles"
+                }
+              ]
+            }
+          },
+          "categories": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "$ref": "#/components/schemas/ItemsOrganizationCategory"
                 }
               ]
             }
@@ -16095,21 +16095,6 @@
             "description": "Als Entwurf speichern, zu bestätigen oder zu veröffentlichen",
             "type": "string"
           },
-          "images": {
-            "nullable": true,
-            "description": "Fügen Sie Bilder zu Ihrer Veranstaltung hinzu (Poster, Fotos, Künstler, usw.)  1. Fügen Sie ein Bild hinzu. 2. Importieren Sie ein Bild (jpg, png). 3. Fügen Sie eine Bildunterschrift und einen Zusatztext hinzu",
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "type": "integer"
-                },
-                {
-                  "$ref": "#/components/schemas/ItemsEventFiles"
-                }
-              ]
-            }
-          },
           "categories": {
             "nullable": true,
             "description": "Wählen Sie maximal 3 Kategorien aus, die zu Ihrer Veranstaltung passen. Die erstgewählte Kategorie ist diejenige unter der die Veranstaltung für BKA Mitglieder in der Printagenda erscheint.",
@@ -16121,6 +16106,21 @@
                 },
                 {
                   "$ref": "#/components/schemas/ItemsEventCategory"
+                }
+              ]
+            }
+          },
+          "images": {
+            "nullable": true,
+            "description": "Fügen Sie Bilder zu Ihrer Veranstaltung hinzu (Poster, Fotos, Künstler, usw.)  1. Fügen Sie ein Bild hinzu. 2. Importieren Sie ein Bild (jpg, png). 3. Fügen Sie eine Bildunterschrift und einen Zusatztext hinzu",
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "$ref": "#/components/schemas/ItemsEventFiles"
                 }
               ]
             }

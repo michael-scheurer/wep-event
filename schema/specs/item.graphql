@@ -994,10 +994,10 @@ type Event {
 
   """Als Entwurf speichern, zu bestätigen oder zu veröffentlichen"""
   publicationStatus: String
-  images(filter: Event_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Event_files]
-  images_func: count_functions
   categories(filter: Event_Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Event_Category]
   categories_func: count_functions
+  images(filter: Event_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Event_files]
+  images_func: count_functions
   prices(filter: Price_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Price]
   prices_func: count_functions
 }
@@ -1070,14 +1070,14 @@ type Event_aggregated_count {
   publicationStatus: Int
 
   """
-  Fügen Sie Bilder zu Ihrer Veranstaltung hinzu (Poster, Fotos, Künstler, usw.)  1. Fügen Sie ein Bild hinzu. 2. Importieren Sie ein Bild (jpg, png). 3. Fügen Sie eine Bildunterschrift und einen Zusatztext hinzu
-  """
-  images: Int
-
-  """
   Wählen Sie maximal 3 Kategorien aus, die zu Ihrer Veranstaltung passen. Die erstgewählte Kategorie ist diejenige unter der die Veranstaltung für BKA Mitglieder in der Printagenda erscheint.
   """
   categories: Int
+
+  """
+  Fügen Sie Bilder zu Ihrer Veranstaltung hinzu (Poster, Fotos, Künstler, usw.)  1. Fügen Sie ein Bild hinzu. 2. Importieren Sie ein Bild (jpg, png). 3. Fügen Sie eine Bildunterschrift und einen Zusatztext hinzu
+  """
+  images: Int
 
   """
   Geben Sie den/die Preis/e an; für Veranstaltungen ohne Eintrittsgeld oder mit Kollekte, wählen Sie unten einen speziellen Tarif aus
@@ -1371,10 +1371,10 @@ type Organization {
   websiteUrl: String
   legalForm: String
   reductions: String
-  categories(filter: Organization_Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Organization_Category]
-  categories_func: count_functions
   images(filter: Organization_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Organization_files]
   images_func: count_functions
+  categories(filter: Organization_Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Organization_Category]
+  categories_func: count_functions
 }
 
 type Organization_aggregated {
@@ -1410,8 +1410,8 @@ type Organization_aggregated_count {
   websiteUrl: Int
   legalForm: Int
   reductions: Int
-  categories: Int
   images: Int
+  categories: Int
 }
 
 type Organization_aggregated_fields {
@@ -1678,8 +1678,8 @@ type version_Event {
 
   """Als Entwurf speichern, zu bestätigen oder zu veröffentlichen"""
   publicationStatus: String
-  images: JSON
   categories: JSON
+  images: JSON
   prices: JSON
 }
 
@@ -1766,8 +1766,8 @@ type version_Organization {
   websiteUrl: String
   legalForm: String
   reductions: String
-  categories: JSON
   images: JSON
+  categories: JSON
 }
 
 """"""
@@ -2075,8 +2075,8 @@ input create_Event_input {
 
   """Als Entwurf speichern, zu bestätigen oder zu veröffentlichen"""
   publicationStatus: String
-  images: [create_Event_files_input]
   categories: [create_Event_Category_input]
+  images: [create_Event_files_input]
   prices: [create_Price_input]
 }
 
@@ -2156,8 +2156,8 @@ input create_Organization_input {
   websiteUrl: String
   legalForm: String
   reductions: String
-  categories: [create_Organization_Category_input]
   images: [create_Organization_files_input]
+  categories: [create_Organization_Category_input]
 }
 
 input create_Price_input {
@@ -2718,10 +2718,10 @@ input Event_filter {
   laterPublicaton: date_filter_operators
   laterPublicaton_func: datetime_function_filter_operators
   publicationStatus: string_filter_operators
-  images: Event_files_quantifier_filter
-  images_func: count_function_filter_operators
   categories: Event_Category_quantifier_filter
   categories_func: count_function_filter_operators
+  images: Event_files_quantifier_filter
+  images_func: count_function_filter_operators
   prices: Price_quantifier_filter
   prices_func: count_function_filter_operators
   _and: [Event_filter]
@@ -2895,10 +2895,10 @@ input Organization_filter {
   websiteUrl: string_filter_operators
   legalForm: string_filter_operators
   reductions: string_filter_operators
-  categories: Organization_Category_quantifier_filter
-  categories_func: count_function_filter_operators
   images: Organization_files_quantifier_filter
   images_func: count_function_filter_operators
+  categories: Organization_Category_quantifier_filter
+  categories_func: count_function_filter_operators
   _and: [Organization_filter]
   _or: [Organization_filter]
 }
@@ -3181,8 +3181,8 @@ input update_Event_input {
 
   """Als Entwurf speichern, zu bestätigen oder zu veröffentlichen"""
   publicationStatus: String
-  images: [update_Event_files_input]
   categories: [update_Event_Category_input]
+  images: [update_Event_files_input]
   prices: [update_Price_input]
 }
 
@@ -3262,8 +3262,8 @@ input update_Organization_input {
   websiteUrl: String
   legalForm: String
   reductions: String
-  categories: [update_Organization_Category_input]
   images: [update_Organization_files_input]
+  categories: [update_Organization_Category_input]
 }
 
 input update_Price_input {

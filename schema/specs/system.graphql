@@ -1708,10 +1708,10 @@ type Event {
 
   """Als Entwurf speichern, zu bestätigen oder zu veröffentlichen"""
   publicationStatus: String
-  images(filter: Event_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Event_files]
-  images_func: count_functions
   categories(filter: Event_Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Event_Category]
   categories_func: count_functions
+  images(filter: Event_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Event_files]
+  images_func: count_functions
   prices(filter: Price_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Price]
   prices_func: count_functions
 }
@@ -1840,10 +1840,10 @@ type Organization {
   websiteUrl: String
   legalForm: String
   reductions: String
-  categories(filter: Organization_Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Organization_Category]
-  categories_func: count_functions
   images(filter: Organization_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Organization_files]
   images_func: count_functions
+  categories(filter: Organization_Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Organization_Category]
+  categories_func: count_functions
 }
 
 type Organization_Category {
@@ -3017,10 +3017,10 @@ input Event_filter {
   laterPublicaton: date_filter_operators
   laterPublicaton_func: datetime_function_filter_operators
   publicationStatus: string_filter_operators
-  images: Event_files_quantifier_filter
-  images_func: count_function_filter_operators
   categories: Event_Category_quantifier_filter
   categories_func: count_function_filter_operators
+  images: Event_files_quantifier_filter
+  images_func: count_function_filter_operators
   prices: Price_quantifier_filter
   prices_func: count_function_filter_operators
   _and: [Event_filter]
@@ -3178,10 +3178,10 @@ input Organization_filter {
   websiteUrl: string_filter_operators
   legalForm: string_filter_operators
   reductions: string_filter_operators
-  categories: Organization_Category_quantifier_filter
-  categories_func: count_function_filter_operators
   images: Organization_files_quantifier_filter
   images_func: count_function_filter_operators
+  categories: Organization_Category_quantifier_filter
+  categories_func: count_function_filter_operators
   _and: [Organization_filter]
   _or: [Organization_filter]
 }

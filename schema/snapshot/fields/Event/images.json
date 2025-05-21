@@ -12,7 +12,9 @@
     "hidden": false,
     "interface": "files",
     "note": "Fügen Sie Bilder zu Ihrer Veranstaltung hinzu (Poster, Fotos, Künstler, usw.)  1. Fügen Sie ein Bild hinzu. 2. Importieren Sie ein Bild (jpg, png). 3. Fügen Sie eine Bildunterschrift und einen Zusatztext hinzu",
-    "options": null,
+    "options": {
+      "template": "{{directus_files_id.$thumbnail}}"
+    },
     "readonly": false,
     "required": false,
     "sort": 23,

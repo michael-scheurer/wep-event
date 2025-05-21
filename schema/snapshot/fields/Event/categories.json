@@ -13,7 +13,8 @@
     "interface": "list-m2m",
     "note": "Wählen Sie maximal 3 Kategorien aus, die zu Ihrer Veranstaltung passen. Die erstgewählte Kategorie ist diejenige unter der die Veranstaltung für BKA Mitglieder in der Printagenda erscheint.",
     "options": {
-      "enableCreate": false
+      "enableCreate": false,
+      "template": "{{Category_id.name}}"
     },
     "readonly": false,
     "required": true,
