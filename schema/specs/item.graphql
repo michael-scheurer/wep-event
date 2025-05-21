@@ -15,10 +15,6 @@ type Query {
   Location_by_id(id: ID!, version: String): Location
   Location_aggregated(groupBy: [String], filter: Location_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [Location_aggregated!]!
   Location_by_version(version: String!, id: ID!): version_Location
-  Category(filter: Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Category!]!
-  Category_by_id(id: ID!, version: String): Category
-  Category_aggregated(groupBy: [String], filter: Category_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [Category_aggregated!]!
-  Category_by_version(version: String!, id: ID!): version_Category
   Region(filter: Region_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Region!]!
   Region_by_id(id: ID!, version: String): Region
   Region_aggregated(groupBy: [String], filter: Region_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [Region_aggregated!]!
@@ -39,6 +35,10 @@ type Query {
   Event_by_id(id: ID!, version: String): Event
   Event_aggregated(groupBy: [String], filter: Event_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [Event_aggregated!]!
   Event_by_version(version: String!, id: ID!): version_Event
+  Category(filter: Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Category!]!
+  Category_by_id(id: ID!, version: String): Category
+  Category_aggregated(groupBy: [String], filter: Category_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [Category_aggregated!]!
+  Category_by_version(version: String!, id: ID!): version_Category
   Event_Location(filter: Event_Location_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Event_Location!]!
   Event_Location_by_id(id: ID!, version: String): Event_Location
   Event_Location_aggregated(groupBy: [String], filter: Event_Location_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [Event_Location_aggregated!]!
@@ -70,8 +70,6 @@ type Mutation {
   create_Location_files_item(data: create_Location_files_input!): Location_files
   create_Location_items(filter: Location_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_Location_input!]): [Location!]!
   create_Location_item(data: create_Location_input!): Location
-  create_Category_items(filter: Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_Category_input!]): [Category!]!
-  create_Category_item(data: create_Category_input!): Category
   create_Region_items(filter: Region_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_Region_input!]): [Region!]!
   create_Region_item(data: create_Region_input!): Region
   create_Organization_items(filter: Organization_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_Organization_input!]): [Organization!]!
@@ -82,6 +80,8 @@ type Mutation {
   create_Contact_item(data: create_Contact_input!): Contact
   create_Event_items(filter: Event_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_Event_input!]): [Event!]!
   create_Event_item(data: create_Event_input!): Event
+  create_Category_items(filter: Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_Category_input!]): [Category!]!
+  create_Category_item(data: create_Category_input!): Category
   create_Event_Location_items(filter: Event_Location_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_Event_Location_input!]): [Event_Location!]!
   create_Event_Location_item(data: create_Event_Location_input!): Event_Location
   create_Event_Category_items(filter: Event_Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_Event_Category_input!]): [Event_Category!]!
@@ -104,9 +104,6 @@ type Mutation {
   update_Location_items(filter: Location_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_Location_input!): [Location!]!
   update_Location_batch(filter: Location_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_Location_input!]): [Location!]!
   update_Location_item(id: ID!, data: update_Location_input!): Location
-  update_Category_items(filter: Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_Category_input!): [Category!]!
-  update_Category_batch(filter: Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_Category_input!]): [Category!]!
-  update_Category_item(id: ID!, data: update_Category_input!): Category
   update_Region_items(filter: Region_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_Region_input!): [Region!]!
   update_Region_batch(filter: Region_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_Region_input!]): [Region!]!
   update_Region_item(id: ID!, data: update_Region_input!): Region
@@ -122,6 +119,9 @@ type Mutation {
   update_Event_items(filter: Event_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_Event_input!): [Event!]!
   update_Event_batch(filter: Event_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_Event_input!]): [Event!]!
   update_Event_item(id: ID!, data: update_Event_input!): Event
+  update_Category_items(filter: Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_Category_input!): [Category!]!
+  update_Category_batch(filter: Category_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_Category_input!]): [Category!]!
+  update_Category_item(id: ID!, data: update_Category_input!): Category
   update_Event_Location_items(filter: Event_Location_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_Event_Location_input!): [Event_Location!]!
   update_Event_Location_batch(filter: Event_Location_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_Event_Location_input!]): [Event_Location!]!
   update_Event_Location_item(id: ID!, data: update_Event_Location_input!): Event_Location
@@ -145,8 +145,6 @@ type Mutation {
   delete_Location_files_item(id: ID!): delete_one
   delete_Location_items(ids: [ID]!): delete_many
   delete_Location_item(id: ID!): delete_one
-  delete_Category_items(ids: [ID]!): delete_many
-  delete_Category_item(id: ID!): delete_one
   delete_Region_items(ids: [ID]!): delete_many
   delete_Region_item(id: ID!): delete_one
   delete_Organization_items(ids: [ID]!): delete_many
@@ -157,6 +155,8 @@ type Mutation {
   delete_Contact_item(id: ID!): delete_one
   delete_Event_items(ids: [ID]!): delete_many
   delete_Event_item(id: ID!): delete_one
+  delete_Category_items(ids: [ID]!): delete_many
+  delete_Category_item(id: ID!): delete_one
   delete_Event_Location_items(ids: [ID]!): delete_many
   delete_Event_Location_item(id: ID!): delete_one
   delete_Event_Category_items(ids: [ID]!): delete_many
@@ -195,12 +195,12 @@ type Subscription {
   Organization_Category_mutated(event: EventEnum): Organization_Category_mutated
   Location_files_mutated(event: EventEnum): Location_files_mutated
   Location_mutated(event: EventEnum): Location_mutated
-  Category_mutated(event: EventEnum): Category_mutated
   Region_mutated(event: EventEnum): Region_mutated
   Organization_mutated(event: EventEnum): Organization_mutated
   Organization_files_mutated(event: EventEnum): Organization_files_mutated
   Contact_mutated(event: EventEnum): Contact_mutated
   Event_mutated(event: EventEnum): Event_mutated
+  Category_mutated(event: EventEnum): Category_mutated
   Event_Location_mutated(event: EventEnum): Event_Location_mutated
   Event_Category_mutated(event: EventEnum): Event_Category_mutated
   Price_mutated(event: EventEnum): Price_mutated
@@ -265,6 +265,7 @@ type Category {
   date_updated: Date
   date_updated_func: datetime_functions
   name: String
+  color: String
 }
 
 type Category_aggregated {
@@ -289,6 +290,7 @@ type Category_aggregated_count {
   user_updated: Int
   date_updated: Int
   name: Int
+  color: Int
 }
 
 type Category_aggregated_fields {
@@ -1599,6 +1601,7 @@ type version_Category {
   user_updated: JSON
   date_updated: Date
   name: String
+  color: String
 }
 
 """"""
@@ -1839,6 +1842,7 @@ input Category_filter {
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
   name: string_filter_operators
+  color: string_filter_operators
   _and: [Category_filter]
   _or: [Category_filter]
 }
@@ -1874,6 +1878,7 @@ input create_Category_input {
   user_updated: create_directus_users_input
   date_updated: Date
   name: String
+  color: String
 }
 
 input create_Contact_input {
@@ -2979,6 +2984,7 @@ input update_Category_input {
   user_updated: update_directus_users_input
   date_updated: Date
   name: String
+  color: String
 }
 
 input update_Contact_input {

@@ -266,12 +266,12 @@ type Subscription {
   Organization_Category_mutated(event: EventEnum): Organization_Category_mutated
   Location_files_mutated(event: EventEnum): Location_files_mutated
   Location_mutated(event: EventEnum): Location_mutated
-  Category_mutated(event: EventEnum): Category_mutated
   Region_mutated(event: EventEnum): Region_mutated
   Organization_mutated(event: EventEnum): Organization_mutated
   Organization_files_mutated(event: EventEnum): Organization_files_mutated
   Contact_mutated(event: EventEnum): Contact_mutated
   Event_mutated(event: EventEnum): Event_mutated
+  Category_mutated(event: EventEnum): Category_mutated
   Event_Location_mutated(event: EventEnum): Event_Location_mutated
   Event_Category_mutated(event: EventEnum): Event_Category_mutated
   Price_mutated(event: EventEnum): Price_mutated
@@ -358,6 +358,7 @@ type Category {
   date_updated: Date
   date_updated_func: datetime_functions
   name: String
+  color: String
 }
 
 type Category_mutated {
@@ -2100,6 +2101,7 @@ input Category_filter {
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
   name: string_filter_operators
+  color: string_filter_operators
   _and: [Category_filter]
   _or: [Category_filter]
 }
