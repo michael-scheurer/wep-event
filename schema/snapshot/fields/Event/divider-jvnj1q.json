@@ -1,0 +1,30 @@
+{
+  "collection": "Event",
+  "field": "divider-jvnj1q",
+  "type": "alias",
+  "meta": {
+    "collection": "Event",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "divider-jvnj1q",
+    "group": null,
+    "hidden": false,
+    "interface": "presentation-divider",
+    "note": null,
+    "options": {
+      "title": "Wichtige Infos"
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 7,
+    "special": [
+      "alias",
+      "no-data"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}
