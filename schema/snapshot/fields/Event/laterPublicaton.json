@@ -11,13 +11,18 @@
     "group": null,
     "hidden": false,
     "interface": "datetime",
-    "note": null,
+    "note": "Programmieren Sie das Datum der Veröffentlichung dieser Veranstaltung",
     "options": null,
     "readonly": false,
     "required": false,
-    "sort": 25,
+    "sort": 27,
     "special": null,
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Spätere Veröffentlichung (optional)"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "half"

@@ -17,12 +17,17 @@
     },
     "readonly": false,
     "required": false,
-    "sort": 15,
+    "sort": 16,
     "special": [
       "alias",
       "no-data"
     ],
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Preise"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "full"

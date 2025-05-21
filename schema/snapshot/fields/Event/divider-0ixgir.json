@@ -17,12 +17,17 @@
     },
     "readonly": false,
     "required": false,
-    "sort": 19,
+    "sort": 20,
     "special": [
       "alias",
       "no-data"
     ],
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Details und Bild(er)"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "full"

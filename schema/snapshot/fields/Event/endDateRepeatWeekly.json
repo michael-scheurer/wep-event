@@ -17,7 +17,12 @@
     "required": false,
     "sort": 2,
     "special": null,
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Enddatum"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "half"

@@ -11,13 +11,18 @@
     "group": null,
     "hidden": false,
     "interface": "input",
-    "note": null,
+    "note": "Internetlink zum Ticketverkauf",
     "options": null,
     "readonly": false,
     "required": false,
-    "sort": 18,
+    "sort": 19,
     "special": null,
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Link zum Ticketverkauf (optional)"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "half"

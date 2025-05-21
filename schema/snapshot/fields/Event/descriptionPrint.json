@@ -11,7 +11,7 @@
     "group": null,
     "hidden": false,
     "interface": "input-rich-text-html",
-    "note": null,
+    "note": "max. 256 Zeichen",
     "options": {
       "softLength": 256,
       "toolbar": [
@@ -35,9 +35,14 @@
     },
     "readonly": false,
     "required": false,
-    "sort": 21,
+    "sort": 22,
     "special": null,
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Kurzbeschreibung für de Printausgabe (nur BKA Mitglieder)"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "full"

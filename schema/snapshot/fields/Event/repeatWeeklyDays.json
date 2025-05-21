@@ -50,7 +50,12 @@
     "special": [
       "cast-json"
     ],
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Betreffende Tage"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "full"

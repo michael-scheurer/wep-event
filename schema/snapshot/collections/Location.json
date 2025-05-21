@@ -18,7 +18,14 @@
     "singleton": false,
     "sort": 4,
     "sort_field": "sort",
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "plural": "Orte",
+        "singular": "Ort",
+        "translation": "Orte"
+      }
+    ],
     "unarchive_value": "draft",
     "versioning": false
   },

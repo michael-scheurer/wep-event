@@ -11,7 +11,7 @@
     "group": null,
     "hidden": false,
     "interface": "select-dropdown",
-    "note": null,
+    "note": "Als Entwurf speichern, zu bestätigen oder zu veröffentlichen",
     "options": {
       "choices": [
         {
@@ -30,9 +30,14 @@
     },
     "readonly": false,
     "required": true,
-    "sort": 24,
+    "sort": 26,
     "special": null,
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Veröffentlichungsstatus"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "half"

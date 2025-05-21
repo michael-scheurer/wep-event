@@ -937,6 +937,10 @@ type directus_webhooks_mutated {
 
 type Event {
   id: ID!
+
+  """
+  Zeigt den Status der Veranstaltung an, falls sie abgesagt oder verschoben werden sollte
+  """
   status: String
   sort: Int
   user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
@@ -945,8 +949,14 @@ type Event {
   user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
+
+  """Name der Veranstaltung, Ausgabe, Name der Künstler:innen etc."""
   name: String
   location(filter: Location_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): Location
+
+  """
+  Wenn dieses Kästchen aktiviert ist, erscheint die Veranstaltung in der Printausgabe.
+  """
   bkaMembership: Boolean
   startDate: Date
   startDate_func: datetime_functions
@@ -959,12 +969,28 @@ type Event {
   repeatWeeklyDays: JSON
   repeatWeeklyDays_func: count_functions
   specialTarif: String
+
+  """Internetlink zum Ticketverkauf"""
   ticketingUrl: String
+
+  """
+  Beschreiben Sie Ihre Veranstaltung. Es empfiehlt sich, einen ersten Absatz von etwa 160 Zeichen zu erstellen, der Ihre Veranstaltung für Suchmaschinen zusammenfasst.
+  """
   description: String
+
+  """max. 256 Zeichen"""
   descriptionPrint: String
+
+  """
+  Spezifizieren Sie das Zielpublikum, für das die Veranstaltung bestimmt ist.
+  """
   targetAudience: String
+
+  """Programmieren Sie das Datum der Veröffentlichung dieser Veranstaltung"""
   laterPublicaton: Date
   laterPublicaton_func: datetime_functions
+
+  """Als Entwurf speichern, zu bestätigen oder zu veröffentlichen"""
   publicationStatus: String
   images(filter: Event_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Event_files]
   images_func: count_functions
@@ -989,14 +1015,28 @@ type Event_aggregated {
 
 type Event_aggregated_count {
   id: Int
+
+  """
+  Zeigt den Status der Veranstaltung an, falls sie abgesagt oder verschoben werden sollte
+  """
   status: Int
   sort: Int
   user_created: Int
   date_created: Int
   user_updated: Int
   date_updated: Int
+
+  """Name der Veranstaltung, Ausgabe, Name der Künstler:innen etc."""
   name: Int
+
+  """
+  Wählen Sie den Ort aus, an dem die Veranstaltung stattfindet. Wenn er dort noch nicht aufgeführt ist, wenden Sie sich an support@bka.ch
+  """
   location: Int
+
+  """
+  Wenn dieses Kästchen aktiviert ist, erscheint die Veranstaltung in der Printausgabe.
+  """
   bkaMembership: Int
   startDate: Int
   endDate: Int
@@ -1004,14 +1044,42 @@ type Event_aggregated_count {
   endDateRepeatWeekly: Int
   repeatWeeklyDays: Int
   specialTarif: Int
+
+  """Internetlink zum Ticketverkauf"""
   ticketingUrl: Int
+
+  """
+  Beschreiben Sie Ihre Veranstaltung. Es empfiehlt sich, einen ersten Absatz von etwa 160 Zeichen zu erstellen, der Ihre Veranstaltung für Suchmaschinen zusammenfasst.
+  """
   description: Int
+
+  """max. 256 Zeichen"""
   descriptionPrint: Int
+
+  """
+  Spezifizieren Sie das Zielpublikum, für das die Veranstaltung bestimmt ist.
+  """
   targetAudience: Int
+
+  """Programmieren Sie das Datum der Veröffentlichung dieser Veranstaltung"""
   laterPublicaton: Int
+
+  """Als Entwurf speichern, zu bestätigen oder zu veröffentlichen"""
   publicationStatus: Int
+
+  """
+  Fügen Sie Bilder zu Ihrer Veranstaltung hinzu (Poster, Fotos, Künstler, usw.)  1. Fügen Sie ein Bild hinzu. 2. Importieren Sie ein Bild (jpg, png). 3. Fügen Sie eine Bildunterschrift und einen Zusatztext hinzu
+  """
   images: Int
+
+  """
+  Wählen Sie maximal 3 Kategorien aus, die zu Ihrer Veranstaltung passen. Die erstgewählte Kategorie ist diejenige unter der die Veranstaltung für BKA Mitglieder in der Printagenda erscheint.
+  """
   categories: Int
+
+  """
+  Geben Sie den/die Preis/e an; für Veranstaltungen ohne Eintrittsgeld oder mit Kollekte, wählen Sie unten einen speziellen Tarif aus
+  """
   prices: Int
 }
 
@@ -1560,14 +1628,24 @@ type version_directus_sync_id_map {
 """"""
 type version_Event {
   id: ID
+
+  """
+  Zeigt den Status der Veranstaltung an, falls sie abgesagt oder verschoben werden sollte
+  """
   status: String
   sort: Int
   user_created: JSON
   date_created: Date
   user_updated: JSON
   date_updated: Date
+
+  """Name der Veranstaltung, Ausgabe, Name der Künstler:innen etc."""
   name: String
   location: JSON
+
+  """
+  Wenn dieses Kästchen aktiviert ist, erscheint die Veranstaltung in der Printausgabe.
+  """
   bkaMembership: Boolean
   startDate: Date
   endDate: Date
@@ -1575,11 +1653,27 @@ type version_Event {
   endDateRepeatWeekly: Date
   repeatWeeklyDays: JSON
   specialTarif: String
+
+  """Internetlink zum Ticketverkauf"""
   ticketingUrl: String
+
+  """
+  Beschreiben Sie Ihre Veranstaltung. Es empfiehlt sich, einen ersten Absatz von etwa 160 Zeichen zu erstellen, der Ihre Veranstaltung für Suchmaschinen zusammenfasst.
+  """
   description: String
+
+  """max. 256 Zeichen"""
   descriptionPrint: String
+
+  """
+  Spezifizieren Sie das Zielpublikum, für das die Veranstaltung bestimmt ist.
+  """
   targetAudience: String
+
+  """Programmieren Sie das Datum der Veröffentlichung dieser Veranstaltung"""
   laterPublicaton: Date
+
+  """Als Entwurf speichern, zu bestätigen oder zu veröffentlichen"""
   publicationStatus: String
   images: JSON
   categories: JSON
@@ -1929,14 +2023,24 @@ input create_Event_files_input {
 
 input create_Event_input {
   id: ID
+
+  """
+  Zeigt den Status der Veranstaltung an, falls sie abgesagt oder verschoben werden sollte
+  """
   status: String
   sort: Int
   user_created: create_directus_users_input
   date_created: Date
   user_updated: create_directus_users_input
   date_updated: Date
+
+  """Name der Veranstaltung, Ausgabe, Name der Künstler:innen etc."""
   name: String
   location: create_Location_input
+
+  """
+  Wenn dieses Kästchen aktiviert ist, erscheint die Veranstaltung in der Printausgabe.
+  """
   bkaMembership: Boolean
   startDate: Date
   endDate: Date
@@ -1944,11 +2048,27 @@ input create_Event_input {
   endDateRepeatWeekly: Date
   repeatWeeklyDays: JSON
   specialTarif: String
+
+  """Internetlink zum Ticketverkauf"""
   ticketingUrl: String
+
+  """
+  Beschreiben Sie Ihre Veranstaltung. Es empfiehlt sich, einen ersten Absatz von etwa 160 Zeichen zu erstellen, der Ihre Veranstaltung für Suchmaschinen zusammenfasst.
+  """
   description: String
+
+  """max. 256 Zeichen"""
   descriptionPrint: String
+
+  """
+  Spezifizieren Sie das Zielpublikum, für das die Veranstaltung bestimmt ist.
+  """
   targetAudience: String
+
+  """Programmieren Sie das Datum der Veröffentlichung dieser Veranstaltung"""
   laterPublicaton: Date
+
+  """Als Entwurf speichern, zu bestätigen oder zu veröffentlichen"""
   publicationStatus: String
   images: [create_Event_files_input]
   categories: [create_Event_Category_input]
@@ -3008,14 +3128,24 @@ input update_Event_files_input {
 
 input update_Event_input {
   id: ID
+
+  """
+  Zeigt den Status der Veranstaltung an, falls sie abgesagt oder verschoben werden sollte
+  """
   status: String
   sort: Int
   user_created: update_directus_users_input
   date_created: Date
   user_updated: update_directus_users_input
   date_updated: Date
+
+  """Name der Veranstaltung, Ausgabe, Name der Künstler:innen etc."""
   name: String
   location: update_Location_input
+
+  """
+  Wenn dieses Kästchen aktiviert ist, erscheint die Veranstaltung in der Printausgabe.
+  """
   bkaMembership: Boolean
   startDate: Date
   endDate: Date
@@ -3023,11 +3153,27 @@ input update_Event_input {
   endDateRepeatWeekly: Date
   repeatWeeklyDays: JSON
   specialTarif: String
+
+  """Internetlink zum Ticketverkauf"""
   ticketingUrl: String
+
+  """
+  Beschreiben Sie Ihre Veranstaltung. Es empfiehlt sich, einen ersten Absatz von etwa 160 Zeichen zu erstellen, der Ihre Veranstaltung für Suchmaschinen zusammenfasst.
+  """
   description: String
+
+  """max. 256 Zeichen"""
   descriptionPrint: String
+
+  """
+  Spezifizieren Sie das Zielpublikum, für das die Veranstaltung bestimmt ist.
+  """
   targetAudience: String
+
+  """Programmieren Sie das Datum der Veröffentlichung dieser Veranstaltung"""
   laterPublicaton: Date
+
+  """Als Entwurf speichern, zu bestätigen oder zu veröffentlichen"""
   publicationStatus: String
   images: [update_Event_files_input]
   categories: [update_Event_Category_input]

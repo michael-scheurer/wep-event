@@ -16033,6 +16033,7 @@
           },
           "status": {
             "nullable": false,
+            "description": "Zeigt den Status der Veranstaltung an, falls sie abgesagt oder verschoben werden sollte",
             "type": "string"
           },
           "sort": {
@@ -16075,10 +16076,12 @@
           },
           "name": {
             "nullable": true,
+            "description": "Name der Veranstaltung, Ausgabe, Name der Künstler:innen etc.",
             "type": "string"
           },
           "location": {
             "nullable": true,
+            "description": "Wählen Sie den Ort aus, an dem die Veranstaltung stattfindet. Wenn er dort noch nicht aufgeführt ist, wenden Sie sich an support@bka.ch",
             "oneOf": [
               {
                 "type": "string",
@@ -16091,6 +16094,7 @@
           },
           "bkaMembership": {
             "nullable": true,
+            "description": "Wenn dieses Kästchen aktiviert ist, erscheint die Veranstaltung in der Printausgabe.",
             "type": "boolean"
           },
           "startDate": {
@@ -16122,31 +16126,38 @@
           },
           "ticketingUrl": {
             "nullable": true,
+            "description": "Internetlink zum Ticketverkauf",
             "type": "string"
           },
           "description": {
             "nullable": true,
+            "description": "Beschreiben Sie Ihre Veranstaltung. Es empfiehlt sich, einen ersten Absatz von etwa 160 Zeichen zu erstellen, der Ihre Veranstaltung für Suchmaschinen zusammenfasst.",
             "type": "string"
           },
           "descriptionPrint": {
             "nullable": true,
+            "description": "max. 256 Zeichen",
             "type": "string"
           },
           "targetAudience": {
             "nullable": true,
+            "description": "Spezifizieren Sie das Zielpublikum, für das die Veranstaltung bestimmt ist.",
             "type": "string"
           },
           "laterPublicaton": {
             "nullable": true,
+            "description": "Programmieren Sie das Datum der Veröffentlichung dieser Veranstaltung",
             "type": "string",
             "format": "date-time"
           },
           "publicationStatus": {
             "nullable": true,
+            "description": "Als Entwurf speichern, zu bestätigen oder zu veröffentlichen",
             "type": "string"
           },
           "images": {
             "nullable": true,
+            "description": "Fügen Sie Bilder zu Ihrer Veranstaltung hinzu (Poster, Fotos, Künstler, usw.)  1. Fügen Sie ein Bild hinzu. 2. Importieren Sie ein Bild (jpg, png). 3. Fügen Sie eine Bildunterschrift und einen Zusatztext hinzu",
             "type": "array",
             "items": {
               "oneOf": [
@@ -16161,6 +16172,7 @@
           },
           "categories": {
             "nullable": true,
+            "description": "Wählen Sie maximal 3 Kategorien aus, die zu Ihrer Veranstaltung passen. Die erstgewählte Kategorie ist diejenige unter der die Veranstaltung für BKA Mitglieder in der Printagenda erscheint.",
             "type": "array",
             "items": {
               "oneOf": [
@@ -16175,6 +16187,7 @@
           },
           "prices": {
             "nullable": true,
+            "description": "Geben Sie den/die Preis/e an; für Veranstaltungen ohne Eintrittsgeld oder mit Kollekte, wählen Sie unten einen speziellen Tarif aus",
             "type": "array",
             "items": {
               "oneOf": [

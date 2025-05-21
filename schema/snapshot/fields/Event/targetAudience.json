@@ -11,7 +11,7 @@
     "group": null,
     "hidden": false,
     "interface": "select-dropdown",
-    "note": null,
+    "note": "Spezifizieren Sie das Zielpublikum, für das die Veranstaltung bestimmt ist.",
     "options": {
       "choices": [
         {
@@ -30,9 +30,14 @@
     },
     "readonly": false,
     "required": true,
-    "sort": 23,
+    "sort": 24,
     "special": null,
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Zielpublikum"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "half"

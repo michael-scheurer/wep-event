@@ -11,8 +11,9 @@
     "group": null,
     "hidden": false,
     "interface": "input-rich-text-html",
-    "note": null,
+    "note": "Beschreiben Sie Ihre Veranstaltung. Es empfiehlt sich, einen ersten Absatz von etwa 160 Zeichen zu erstellen, der Ihre Veranstaltung für Suchmaschinen zusammenfasst.",
     "options": {
+      "softLength": 6400,
       "toolbar": [
         "bold",
         "italic",
@@ -32,10 +33,15 @@
       ]
     },
     "readonly": false,
-    "required": false,
-    "sort": 20,
+    "required": true,
+    "sort": 21,
     "special": null,
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Beschreibung"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "full"

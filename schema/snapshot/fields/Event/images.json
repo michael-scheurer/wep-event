@@ -11,17 +11,22 @@
     "group": null,
     "hidden": false,
     "interface": "files",
-    "note": null,
+    "note": "Fügen Sie Bilder zu Ihrer Veranstaltung hinzu (Poster, Fotos, Künstler, usw.)  1. Fügen Sie ein Bild hinzu. 2. Importieren Sie ein Bild (jpg, png). 3. Fügen Sie eine Bildunterschrift und einen Zusatztext hinzu",
     "options": null,
     "readonly": false,
     "required": false,
-    "sort": 22,
+    "sort": 23,
     "special": [
       "files"
     ],
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Bilder (optional)"
+      }
+    ],
     "validation": null,
     "validation_message": null,
-    "width": "half"
+    "width": "full"
   }
 }

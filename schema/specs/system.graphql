@@ -1652,6 +1652,10 @@ type directus_webhooks_mutated {
 
 type Event {
   id: ID!
+
+  """
+  Zeigt den Status der Veranstaltung an, falls sie abgesagt oder verschoben werden sollte
+  """
   status: String
   sort: Int
   user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
@@ -1660,8 +1664,14 @@ type Event {
   user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_updated: Date
   date_updated_func: datetime_functions
+
+  """Name der Veranstaltung, Ausgabe, Name der Künstler:innen etc."""
   name: String
   location(filter: Location_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): Location
+
+  """
+  Wenn dieses Kästchen aktiviert ist, erscheint die Veranstaltung in der Printausgabe.
+  """
   bkaMembership: Boolean
   startDate: Date
   startDate_func: datetime_functions
@@ -1674,12 +1684,28 @@ type Event {
   repeatWeeklyDays: JSON
   repeatWeeklyDays_func: count_functions
   specialTarif: String
+
+  """Internetlink zum Ticketverkauf"""
   ticketingUrl: String
+
+  """
+  Beschreiben Sie Ihre Veranstaltung. Es empfiehlt sich, einen ersten Absatz von etwa 160 Zeichen zu erstellen, der Ihre Veranstaltung für Suchmaschinen zusammenfasst.
+  """
   description: String
+
+  """max. 256 Zeichen"""
   descriptionPrint: String
+
+  """
+  Spezifizieren Sie das Zielpublikum, für das die Veranstaltung bestimmt ist.
+  """
   targetAudience: String
+
+  """Programmieren Sie das Datum der Veröffentlichung dieser Veranstaltung"""
   laterPublicaton: Date
   laterPublicaton_func: datetime_functions
+
+  """Als Entwurf speichern, zu bestätigen oder zu veröffentlichen"""
   publicationStatus: String
   images(filter: Event_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Event_files]
   images_func: count_functions

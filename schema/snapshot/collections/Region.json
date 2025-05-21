@@ -18,7 +18,14 @@
     "singleton": false,
     "sort": 2,
     "sort_field": "sort",
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "plural": "Regionen",
+        "singular": "Region",
+        "translation": "Regionen"
+      }
+    ],
     "unarchive_value": "draft",
     "versioning": false
   },

@@ -11,18 +11,23 @@
     "group": null,
     "hidden": false,
     "interface": "select-dropdown-m2o",
-    "note": null,
+    "note": "Wählen Sie den Ort aus, an dem die Veranstaltung stattfindet. Wenn er dort noch nicht aufgeführt ist, wenden Sie sich an support@bka.ch",
     "options": {
       "enableLink": true,
       "template": "{{name}}"
     },
     "readonly": false,
-    "required": false,
-    "sort": 10,
+    "required": true,
+    "sort": 11,
     "special": [
       "m2o"
     ],
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Ort der Veranstaltung"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "half"

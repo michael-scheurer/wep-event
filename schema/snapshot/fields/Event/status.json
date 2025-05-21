@@ -14,7 +14,7 @@
     "group": null,
     "hidden": false,
     "interface": "select-dropdown",
-    "note": null,
+    "note": "Zeigt den Status der Veranstaltung an, falls sie abgesagt oder verschoben werden sollte",
     "options": {
       "choices": [
         {
@@ -36,10 +36,15 @@
       ]
     },
     "readonly": false,
-    "required": false,
-    "sort": 9,
+    "required": true,
+    "sort": 10,
     "special": null,
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Status der Veranstaltung"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "half"

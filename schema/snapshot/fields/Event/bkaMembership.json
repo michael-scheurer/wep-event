@@ -11,15 +11,20 @@
     "group": null,
     "hidden": false,
     "interface": "boolean",
-    "note": null,
+    "note": "Wenn dieses Kästchen aktiviert ist, erscheint die Veranstaltung in der Printausgabe.",
     "options": null,
     "readonly": false,
     "required": false,
-    "sort": 11,
+    "sort": 12,
     "special": [
       "cast-boolean"
     ],
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "BKa Mitgliederanlass"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "half"

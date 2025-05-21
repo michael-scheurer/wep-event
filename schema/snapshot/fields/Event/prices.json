@@ -11,18 +11,23 @@
     "group": null,
     "hidden": false,
     "interface": "list-o2m",
-    "note": null,
+    "note": "Geben Sie den/die Preis/e an; für Veranstaltungen ohne Eintrittsgeld oder mit Kollekte, wählen Sie unten einen speziellen Tarif aus",
     "options": {
       "enableSelect": false,
       "template": "{{tarif}} | {{tarifDescription}}"
     },
     "readonly": false,
     "required": false,
-    "sort": 16,
+    "sort": 17,
     "special": [
       "o2m"
     ],
-    "translations": null,
+    "translations": [
+      {
+        "language": "en-US",
+        "translation": "Preise"
+      }
+    ],
     "validation": null,
     "validation_message": null,
     "width": "full"
